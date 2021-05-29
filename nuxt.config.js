@@ -39,6 +39,13 @@ export default {
     '@nuxtjs/vuetify',
   ],
 
+  env: {
+    azureFaceKey1: process.env.AZURE_FACE_KEY_1,
+    azureFaceKey2: process.env.AZURE_FACE_KEY_2,
+    azureFaceEndpointRegion: process.env.AZURE_FACE_ENDPOINT_REGION,
+    azureFaceEndpoint: process.env.AZURE_FACE_ENDPOINT,
+  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
 
