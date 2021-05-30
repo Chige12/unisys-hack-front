@@ -1,5 +1,5 @@
 <template>
-  <v-row justify="center">
+  <v-row justify="center" class="index-page">
     <v-col cols="8" md="8" sm="12" xs="12">
       <v-card>
         <v-card-title class="headline">
@@ -66,6 +66,8 @@
 
 <script>
 import axios from 'axios'
+import Chat from 'twilio-chat'
+
 export default {
   data() {
     return {
@@ -77,6 +79,8 @@ export default {
       intervalID: null,
       captureCycleTime: 5000,
       judgments: [],
+      token:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTSzU3ZmUyZTAxMTI4Zjg0NGZjZTYwNzg2OTc2NmVjZWNjLTE2MjIzNDM0MjIiLCJncmFudHMiOnsiaWRlbnRpdHkiOiJ1c2VyQGV4YW1wbGUuY29tIiwiY2hhdCI6eyJzZXJ2aWNlX3NpZCI6IklTMDM2MDI1MTM4Zjk5NDlmYTlkMWMxZGIyOGQwN2JkMzkifX0sImlhdCI6MTYyMjM0MzQyMiwiZXhwIjoxNjIyMzQ3MDIyLCJpc3MiOiJTSzU3ZmUyZTAxMTI4Zjg0NGZjZTYwNzg2OTc2NmVjZWNjIiwic3ViIjoiQUM3NDEwNmMyOTYxZDM0NzM2MzY5MGE2NGQwN2I4MzdkMCJ9.p2WiqDJtMVh47rHVL0kIZX9GL0B1cRG53eD85sqRLTA',
     }
   },
   computed: {
@@ -192,10 +196,23 @@ export default {
         this.judgments.push('Sitting')
       }
     },
+    sendStatus() {
+      Chat.Client.create(this.token)
+        .then((client) => {
+          // Use client
+          console.log(client)
+        })
+        .catch((error) => {
+          console.error(error)
+        })
+    },
   },
 }
 </script>
 <style>
+.index-page {
+  padding-top: 24px;
+}
 #canvas {
   display: none;
 }

@@ -26,7 +26,8 @@
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title v-text="title" />
+      <!-- <v-toolbar-title v-text="title" /> -->
+      <img src="~/assets/Stol-logo-white.png" class="title-logo" />
     </v-app-bar>
     <v-main>
       <v-container>
@@ -76,3 +77,14 @@ export default {
   },
 }
 </script>
+<style lang="scss">
+.theme--dark.v-app-bar.v-toolbar.v-sheet {
+  background-color: #121212;
+  box-shadow: 0 4px 10px rgba(#000, 0.65);
+}
+.title-logo {
+  display: block;
+  height: 24px;
+  padding-left: 16px;
+}
+</style>
