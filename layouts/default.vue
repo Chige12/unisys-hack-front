@@ -27,7 +27,7 @@
     <v-app-bar :clipped-left="clipped" fixed app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <!-- <v-toolbar-title v-text="title" /> -->
-      <img src="~/assets/Stol-logo-white.png" class="title-logo" />
+      <img src="~/assets/stol-logo-white.png" class="title-logo" />
     </v-app-bar>
     <v-main>
       <v-container>
