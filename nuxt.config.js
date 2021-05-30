@@ -48,9 +48,6 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
-  serverMiddleware: {
-    api: '~/api',
-  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
